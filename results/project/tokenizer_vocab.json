@@ -1,0 +1,58 @@
+[
+ {
+  "vocab_size": 500,
+  "actual_vocab": 557,
+  "tokens_per_tweet": 71.54,
+  "features_seen_in_<5_tweets": 424,
+  "macro_f1": 0.0888,
+  "accuracy": 0.2392
+ },
+ {
+  "vocab_size": 1000,
+  "actual_vocab": 1000,
+  "tokens_per_tweet": 32.52,
+  "features_seen_in_<5_tweets": 425,
+  "macro_f1": 0.1751,
+  "accuracy": 0.28
+ },
+ {
+  "vocab_size": 2000,
+  "actual_vocab": 2000,
+  "tokens_per_tweet": 25.39,
+  "features_seen_in_<5_tweets": 430,
+  "macro_f1": 0.197,
+  "accuracy": 0.2752
+ },
+ {
+  "vocab_size": 4000,
+  "actual_vocab": 4000,
+  "tokens_per_tweet": 21.48,
+  "features_seen_in_<5_tweets": 454,
+  "macro_f1": 0.2035,
+  "accuracy": 0.2718
+ },
+ {
+  "vocab_size": 8000,
+  "actual_vocab": 8000,
+  "tokens_per_tweet": 18.79,
+  "features_seen_in_<5_tweets": 575,
+  "macro_f1": 0.2138,
+  "accuracy": 0.2756
+ },
+ {
+  "vocab_size": 16000,
+  "actual_vocab": 16000,
+  "tokens_per_tweet": 16.79,
+  "features_seen_in_<5_tweets": 1172,
+  "macro_f1": 0.2218,
+  "accuracy": 0.2836
+ },
+ {
+  "vocab_size": 32000,
+  "actual_vocab": 32000,
+  "tokens_per_tweet": 15.22,
+  "features_seen_in_<5_tweets": 13234,
+  "macro_f1": 0.2262,
+  "accuracy": 0.2884
+ }
+]

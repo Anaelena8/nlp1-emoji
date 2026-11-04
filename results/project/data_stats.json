@@ -1,0 +1,240 @@
+{
+ "sizes": {
+  "train": 45000,
+  "validation": 5000,
+  "test": 50000
+ },
+ "classes": [
+  "❤ red_heart",
+  "😍 heart_eyes",
+  "😂 joy_tears",
+  "💕 two_hearts",
+  "🔥 fire",
+  "😊 smiling",
+  "😎 sunglasses",
+  "✨ sparkles",
+  "💙 blue_heart",
+  "😘 kiss",
+  "📷 camera",
+  "🇺🇸 US_flag",
+  "☀ sun",
+  "💜 purple_heart",
+  "😉 wink",
+  "💯 hundred",
+  "😁 grin",
+  "🎄 xmas_tree",
+  "📸 camera_flash",
+  "😜 wink_tongue"
+ ],
+ "class_share": {
+  "train": {
+   "❤ red_heart": 0.2045,
+   "😍 heart_eyes": 0.1089,
+   "😂 joy_tears": 0.1047,
+   "💕 two_hearts": 0.0454,
+   "🔥 fire": 0.0477,
+   "😊 smiling": 0.0474,
+   "😎 sunglasses": 0.0462,
+   "✨ sparkles": 0.0521,
+   "💙 blue_heart": 0.0286,
+   "😘 kiss": 0.0309,
+   "📷 camera": 0.044,
+   "🇺🇸 US_flag": 0.021,
+   "☀ sun": 0.0277,
+   "💜 purple_heart": 0.0218,
+   "😉 wink": 0.0272,
+   "💯 hundred": 0.0208,
+   "😁 grin": 0.03,
+   "🎄 xmas_tree": 0.031,
+   "📸 camera_flash": 0.0336,
+   "😜 wink_tongue": 0.0265
+  },
+  "validation": {
+   "❤ red_heart": 0.2112,
+   "😍 heart_eyes": 0.1042,
+   "😂 joy_tears": 0.1008,
+   "💕 two_hearts": 0.0616,
+   "🔥 fire": 0.0486,
+   "😊 smiling": 0.0476,
+   "😎 sunglasses": 0.0408,
+   "✨ sparkles": 0.0398,
+   "💙 blue_heart": 0.0354,
+   "😘 kiss": 0.0342,
+   "📷 camera": 0.0318,
+   "🇺🇸 US_flag": 0.0286,
+   "☀ sun": 0.0258,
+   "💜 purple_heart": 0.0306,
+   "😉 wink": 0.0258,
+   "💯 hundred": 0.0296,
+   "😁 grin": 0.0274,
+   "🎄 xmas_tree": 0.0242,
+   "📸 camera_flash": 0.0258,
+   "😜 wink_tongue": 0.0262
+  },
+  "test": {
+   "❤ red_heart": 0.216,
+   "😍 heart_eyes": 0.0966,
+   "😂 joy_tears": 0.0907,
+   "💕 two_hearts": 0.0521,
+   "🔥 fire": 0.0743,
+   "😊 smiling": 0.0323,
+   "😎 sunglasses": 0.0399,
+   "✨ sparkles": 0.055,
+   "💙 blue_heart": 0.031,
+   "😘 kiss": 0.0235,
+   "📷 camera": 0.0286,
+   "🇺🇸 US_flag": 0.039,
+   "☀ sun": 0.0253,
+   "💜 purple_heart": 0.0223,
+   "😉 wink": 0.0261,
+   "💯 hundred": 0.0249,
+   "😁 grin": 0.0231,
+   "🎄 xmas_tree": 0.0309,
+   "📸 camera_flash": 0.0483,
+   "😜 wink_tongue": 0.0202
+  }
+ },
+ "words_per_tweet": {
+  "mean": 11.82,
+  "median": 12.0,
+  "p95": 18.0,
+  "max": 39
+ },
+ "pattern_share_overall": {
+  "contains U+FE0F (leak)": 0.1982,
+  "location tag ' @ Place'": 0.4992,
+  "hashtag": 0.4672,
+  "@user mention": 0.2197
+ },
+ "pattern_share_per_class": {
+  "contains U+FE0F (leak)": {
+   "❤ red_heart": 0.8371,
+   "😍 heart_eyes": 0.0006,
+   "😂 joy_tears": 0.0002,
+   "💕 two_hearts": 0.0,
+   "🔥 fire": 0.0005,
+   "😊 smiling": 0.0014,
+   "😎 sunglasses": 0.0005,
+   "✨ sparkles": 0.0,
+   "💙 blue_heart": 0.0,
+   "😘 kiss": 0.0,
+   "📷 camera": 0.0,
+   "🇺🇸 US_flag": 0.0,
+   "☀ sun": 0.9639,
+   "💜 purple_heart": 0.0,
+   "😉 wink": 0.0008,
+   "💯 hundred": 0.0011,
+   "😁 grin": 0.0007,
+   "🎄 xmas_tree": 0.0,
+   "📸 camera_flash": 0.0,
+   "😜 wink_tongue": 0.0008
+  },
+  "location tag ' @ Place'": {
+   "❤ red_heart": 0.5491,
+   "😍 heart_eyes": 0.4877,
+   "😂 joy_tears": 0.3889,
+   "💕 two_hearts": 0.5653,
+   "🔥 fire": 0.4441,
+   "😊 smiling": 0.4184,
+   "😎 sunglasses": 0.5361,
+   "✨ sparkles": 0.4968,
+   "💙 blue_heart": 0.5742,
+   "😘 kiss": 0.5306,
+   "📷 camera": 0.5126,
+   "🇺🇸 US_flag": 0.5708,
+   "☀ sun": 0.6589,
+   "💜 purple_heart": 0.5133,
+   "😉 wink": 0.384,
+   "💯 hundred": 0.4657,
+   "😁 grin": 0.4237,
+   "🎄 xmas_tree": 0.5555,
+   "📸 camera_flash": 0.5066,
+   "😜 wink_tongue": 0.4458
+  },
+  "hashtag": {
+   "❤ red_heart": 0.4814,
+   "😍 heart_eyes": 0.4764,
+   "😂 joy_tears": 0.4116,
+   "💕 two_hearts": 0.418,
+   "🔥 fire": 0.527,
+   "😊 smiling": 0.4189,
+   "😎 sunglasses": 0.4899,
+   "✨ sparkles": 0.374,
+   "💙 blue_heart": 0.4802,
+   "😘 kiss": 0.4651,
+   "📷 camera": 0.5242,
+   "🇺🇸 US_flag": 0.6121,
+   "☀ sun": 0.4535,
+   "💜 purple_heart": 0.4724,
+   "😉 wink": 0.4853,
+   "💯 hundred": 0.4786,
+   "😁 grin": 0.4496,
+   "🎄 xmas_tree": 0.451,
+   "📸 camera_flash": 0.5166,
+   "😜 wink_tongue": 0.4845
+  },
+  "@user mention": {
+   "❤ red_heart": 0.1837,
+   "😍 heart_eyes": 0.1996,
+   "😂 joy_tears": 0.2336,
+   "💕 two_hearts": 0.1703,
+   "🔥 fire": 0.3229,
+   "😊 smiling": 0.1947,
+   "😎 sunglasses": 0.1574,
+   "✨ sparkles": 0.1608,
+   "💙 blue_heart": 0.1523,
+   "😘 kiss": 0.248,
+   "📷 camera": 0.5343,
+   "🇺🇸 US_flag": 0.1353,
+   "☀ sun": 0.0907,
+   "💜 purple_heart": 0.1857,
+   "😉 wink": 0.1985,
+   "💯 hundred": 0.2248,
+   "😁 grin": 0.2037,
+   "🎄 xmas_tree": 0.1195,
+   "📸 camera_flash": 0.551,
+   "😜 wink_tongue": 0.173
+  }
+ },
+ "leak": {
+  "tweets_with_leak": 8919,
+  "share_of_train": 0.1982,
+  "label_share_among_leak_tweets": {
+   "❤ red_heart": 0.8639,
+   "☀ sun": 0.1347,
+   "😊 smiling": 0.0003,
+   "😍 heart_eyes": 0.0003,
+   "😎 sunglasses": 0.0001
+  }
+ },
+ "baselines": {
+  "validation": {
+   "always red_heart (majority)": {
+    "macro_f1": 0.0174,
+    "accuracy": 0.2112
+   },
+   "random, train class proportions": {
+    "macro_f1": 0.0558,
+    "accuracy": 0.0886
+   },
+   "random, uniform": {
+    "macro_f1": 0.0461,
+    "accuracy": 0.0518
+   }
+  },
+  "test": {
+   "always red_heart (majority)": {
+    "macro_f1": 0.0178,
+    "accuracy": 0.216
+   },
+   "random, train class proportions": {
+    "macro_f1": 0.0491,
+    "accuracy": 0.0852
+   },
+   "random, uniform": {
+    "macro_f1": 0.0457,
+    "accuracy": 0.0507
+   }
+  }
+ }
+}

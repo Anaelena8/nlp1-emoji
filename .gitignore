@@ -1,0 +1,12 @@
+# Python environment (recreate with the setup steps in TEAM_GUIDE.md)
+.venv/
+
+# Python / Jupyter caches
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS and editor files
+.DS_Store
+.vscode/
+.claude/
