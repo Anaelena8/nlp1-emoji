@@ -19,9 +19,9 @@ from pathlib import Path
 import numpy as np
 from tokenizers import Tokenizer
 
-from project.lib import (BagOfNgrams, BagOfWords, MODEL_FACTORIES, TokenIndicator, kfold_ids,
+from project.lib import (BagOfNgrams, BagOfWords, TokenIndicator, kfold_ids,
                          load_tweeteval_emoji, metrics, timed, train_bpe)
-
+from project.models_t2 import MODEL_FACTORIES
 ROOT = Path("results/project")
 DEFAULT_VOCAB = 16000   # chosen in project/tokenizer_vocab.py (see TEAM_GUIDE.md, section 5)
 
