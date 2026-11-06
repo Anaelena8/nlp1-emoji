@@ -1,5 +1,5 @@
 """
-Teammate 1, task 1.4: choose the BPE vocabulary size.
+Choose the BPE vocabulary size.
 
 Protocol: for each vocab size, train BPE on the 45k training tweets (text only), encode with bag-of-words,
 train logistic regression on the full training split, and score macro-F1 on the official 5k VALIDATION
@@ -24,7 +24,7 @@ SIZES = [500, 1000, 2000, 4000, 8000, 16000, 32000]
 
 def main():
     # clean=True: the validation split was (mostly) released WITHOUT the U+FE0F leak while train/test have it,
-    # so a fair comparison removes the leak everywhere (see project/explore_data.py and TEAM_GUIDE.md).
+    # so a fair comparison removes the leak everywhere (see project/explore_data.py).
     train, val, _, _ = load_tweeteval_emoji(clean=True)
     texts, y = [t for t, _ in train], np.array([l for _, l in train])
     vtexts, vy = [t for t, _ in val], np.array([l for _, l in val])

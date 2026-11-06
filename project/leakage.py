@@ -1,5 +1,5 @@
 """
-Teammate 1, task 1.6 (Extra): how much does the U+FE0F label leak inflate results?
+How much does the U+FE0F label leak inflate results?
 
 2 x 2 design, for one system (encoder + model), 3 seeds:
     train on RAW tweets  (leak present)   x   evaluate on RAW test   (leak present)    -> what a naive pipeline reports
@@ -10,7 +10,6 @@ Each model is trained on all 45k training tweets. The test set is used for ANALY
 anything, so this does not bias the main results.
 
 Usage:  .venv/bin/python -m project.leakage --encoder bow+bigrams --model logistic
-        (rerun with Teammate 2's best system once known)
 Writes  results/project/leakage/<encoder>__<model>.json  and  results/project/figures/leakage__<encoder>__<model>.png
 """
 import argparse

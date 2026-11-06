@@ -1,9 +1,8 @@
 """
-Teammate 1: build our 3 of the 6 backup slides (one per "Get to work!" item) as a 16:9 PDF.
+Build backup slides 1-3 as a 16:9 PDF.
     Slide 1  Dataset    (Get to work #1): the data, imbalance, metric consequence, the U+FE0F leak
     Slide 2  Tokenizer  (Get to work #2): BPE, which data, vocabulary size
     Slide 3  Features   (Get to work #3): token indicator, bag-of-words, BoW + bigrams
-Teammate 2 makes slides 4 (architectures), 5 (evaluation), 6 (analysis / best model).
 Numbers are read from the result files, so rerunning experiments keeps the slides in sync.
 
 Usage:  .venv/bin/python -m project.make_slides_t1 [--leak_system bow+bigrams__logistic]

@@ -1,5 +1,5 @@
 """
-Teammate 1, tasks 1.2 + 1.3: explore TweetEval emoji and compute trivial baselines.
+Explore TweetEval emoji and compute trivial baselines.
 
 Usage:  .venv/bin/python -m project.explore_data
 Writes  results/project/figures/*.png  and  results/project/data_stats.json

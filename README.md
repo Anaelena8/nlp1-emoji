@@ -1,9 +1,7 @@
 # NLP1 Project 1: Emoji prediction on TweetEval
 
-We classify tweets into the **20 emojis** they originally contained ([TweetEval emoji](https://huggingface.co/datasets/cardiffnlp/tweet_eval)), comparing 3 text representations × 3 architectures with cross-validation, macro-F1 and Bayesian estimation.
+We classify tweets into the **20 emojis** they originally contained ([TweetEval emoji](https://huggingface.co/datasets/cardiffnlp/tweet_eval)), comparing 3 text representations × 4 architectures with cross-validation, macro-F1 and Bayesian estimation.
 
-- 📘 **[TEAM_GUIDE.md](TEAM_GUIDE.md)**: everything explained step by step (start here)
-- ▶️ **[project/walkthrough_teammate1.ipynb](project/walkthrough_teammate1.ipynb)**: runnable walkthrough of the data, tokenizer and features
 - 💻 **[project/](project/)**: our code · 📊 **[results/project/](results/project/)**: figures, numbers, slides
 
 Key finding so far: the dataset contains a hidden label leak (an invisible `U+FE0F` character left behind when ❤️/☀️ were removed) that inflates macro-F1 by about 6 points; we remove it from all splits.

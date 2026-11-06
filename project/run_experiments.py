@@ -2,7 +2,7 @@
 k-fold cross-validation for every (encoder, architecture) pair on TweetEval emoji.
 
 Usage (from the repository root):
-    .venv/bin/python -m project.run_experiments                   # main grid: 9 systems x 5 folds x 3 seeds, leak removed
+    .venv/bin/python -m project.run_experiments                   # main grid: 12 systems x 5 folds x 3 seeds, leak removed
     .venv/bin/python -m project.run_experiments --keep_leak --tag leaky ...   # same, on the raw (leaky) data
 
 Outputs in results/project/<tag>/:
@@ -23,7 +23,7 @@ from project.lib import (BagOfNgrams, BagOfWords, TokenIndicator, kfold_ids,
                          load_tweeteval_emoji, metrics, timed, train_bpe)
 from project.models_t2 import MODEL_FACTORIES
 ROOT = Path("results/project")
-DEFAULT_VOCAB = 16000   # chosen in project/tokenizer_vocab.py (see TEAM_GUIDE.md, section 5)
+DEFAULT_VOCAB = 16000   # chosen in project/tokenizer_vocab.py
 
 
 def get_tokenizer(train_texts, vocab_size, clean):
@@ -52,7 +52,7 @@ def main():
     ap.add_argument("--encoders", nargs="+", default=["indicator", "bow", "bow+bigrams"])
     ap.add_argument("--models", nargs="+", default=list(MODEL_FACTORIES))
     ap.add_argument("--keep_leak", action="store_true",
-                    help="keep the U+FE0F label leak (default: removed from all splits; see TEAM_GUIDE.md, section 6)")
+                    help="keep the U+FE0F label leak (default: removed from all splits; see project/leakage.py)")
     ap.add_argument("--tag", default="main", help="sub-folder of results/project for this experiment")
     args = ap.parse_args()
     args.clean = not args.keep_leak

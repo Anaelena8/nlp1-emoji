@@ -1,10 +1,6 @@
 """
 Project 1 library: TweetEval emoji prediction (20 classes).
 
-Ownership (see TEAM_GUIDE.md, section 2):
-    Teammate 1: data loading, cross-validation folds, tokenizer, encoders, leakage cleaning
-    Teammate 2: models (LogLinear, MLP, deep MLP), training hyperparameters
-
 Everything here follows the tutorial's design (encoder -> probabilistic model -> most-probable-class),
 but encoders work on *batches* of texts and return SciPy sparse matrices, so that we never
 materialise a dense [num_texts x vocab] matrix (that would need ~1GB of RAM for SST-2).
