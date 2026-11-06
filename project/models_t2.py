@@ -50,7 +50,7 @@ class MLP:
       """Trains a Net with AdamW + early stopping. hidden_dims=[128] -> MLP, [256, 128] -> deep MLP."""
 
       def __init__(self, seed, hidden_dims=(128,), dropout=0.1, lr=1e-3, weight_decay=1e-4,
-                   batch_size=128, max_epochs=10, patience=2, es_fraction=0.1, num_classes=20):
+                   batch_size=128, max_epochs=10, patience=2, es_fraction=0.1, num_classes=20, class_weighted=False):
           self.seed = seed
           self.hidden_dims = list(hidden_dims)
           self.dropout = dropout
@@ -63,7 +63,7 @@ class MLP:
           self.num_classes = num_classes
           self.best_epoch = None
           self.net = None
-          self.loss_fn = nn.CrossEntropyLoss()   # = softmax + negative log-likelihood, in one stable step
+          self.class_weighted = class_weighted
 
       def _batches(self, X, y, shuffle, rng=None):
           """Yield (inputs, labels) mini-batches. Sparse rows are made dense one batch at a time (saves memory)."""
@@ -90,6 +90,13 @@ class MLP:
           n_es = int(len(perm) * self.es_fraction)
           es_ids, tr_ids = perm[:n_es], perm[n_es:]
           X_tr, y_tr, X_es, y_es = X[tr_ids], y[tr_ids], X[es_ids], y[es_ids]
+          # loss: optionally weight each emoji by inverse frequency, so rare emojis count as much as ❤
+          if self.class_weighted:
+              counts = np.bincount(y_tr, minlength=self.num_classes)
+              weights = len(y_tr) / (self.num_classes * np.maximum(counts, 1))   # max(.,1) avoids dividing by 0
+              self.loss_fn = nn.CrossEntropyLoss(weight=torch.tensor(weights, dtype=torch.float32))
+          else:
+              self.loss_fn = nn.CrossEntropyLoss()
 
           # 2. build the network and the optimizer
           self.net = Net(X.shape[1], self.hidden_dims, self.num_classes, self.dropout)
@@ -130,9 +137,9 @@ class MLP:
 
 
 MODEL_FACTORIES = {
-      "logistic": lambda seed: LogReg(seed=seed),
-      "mlp":      lambda seed: MLP(seed=seed, hidden_dims=[128], dropout=0.1),
-      "deep_mlp": lambda seed: MLP(seed=seed, hidden_dims=[256, 128], dropout=0.3),
+      "logistic":     lambda seed: LogReg(seed=seed),
+      "mlp":          lambda seed: MLP(seed=seed, hidden_dims=[128], dropout=0.1),
+      "weighted_mlp": lambda seed: MLP(seed=seed, hidden_dims=[128], dropout=0.1, class_weighted=True),
   }
 
 if __name__ == "__main__":
@@ -157,6 +164,8 @@ if __name__ == "__main__":
       print("row sums:", probs.sum(axis=1)[:3])
       print("macro-F1:", round(f1_score(y[2500:], pred, average="macro"), 3))
       print("example:", texts[2500], "→ predicted", names[pred[0]], "| true", names[y[2500]])
-      mlp = MLP(seed=0, hidden_dims=[128]).fit(X[:2500], y[:2500])
-      pred = mlp.predict_proba(X[2500:]).argmax(axis=1)
-      print("MLP best epoch:", mlp.best_epoch, " macro-F1:", round(f1_score(y[2500:], pred, average="macro"), 3))
+      for name in ["mlp", "weighted_mlp"]:
+          m = MODEL_FACTORIES[name](0).fit(X[:2500], y[:2500])
+          pred = m.predict_proba(X[2500:]).argmax(axis=1)
+          print(f"{name:13s} macro-F1={f1_score(y[2500:], pred, average='macro'):.3f}  "
+                f"accuracy={(pred == y[2500:]).mean():.3f}  share predicted ❤={(pred == 0).mean():.2f}")
